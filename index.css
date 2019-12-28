@@ -1,0 +1,232 @@
+.content {
+  font-family: 'Lato', 'sans-serif';
+  position: relative;
+}
+
+.header {
+  background: #ffd800;
+  padding: 20px;
+  margin-bottom: 50px;
+  font-size: 30px;
+  color: #fff;
+}
+
+.body {
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.size-selection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.size-selection button {
+  margin: 15px 0 0;
+  background: #aaa;
+  color: #fff;
+  padding: 5px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.size-selection button.selected {
+  background: #004445;
+}
+
+.size-selection .ingredients-quantity {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.size-selection .size-description {
+  margin: 0;
+  font-size: 12px;
+}
+
+.ingredients-list {
+  flex: 1;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.ingredients-list .category {
+  margin-bottom: 30px;
+}
+
+.ingredients-list .category .title-bar {
+  background: #6fb98f;
+  color: #004445;
+  box-shadow: 0 1px 4px 1px #adb5bd;
+  font-weight: bold;
+  padding: 8px 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.ingredients-list .category .ingredients-container {
+  overflow-x: scroll;
+  padding: 25px 0;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.ingredients-list .category .ingredients-container::-webkit-scrollbar {
+  -webkit-appearance: none;
+  height: 7px;
+}
+
+.ingredients-list .category .ingredients-container::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  background-color: #004445;
+  opacity: 0.5;
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+.ingredients-list .category .ingredients-container .item {
+  width: 140px;
+  text-align: center;
+  margin: 0 25px;
+  position: relative;
+  cursor: pointer;
+}
+
+.ingredients-list .category .ingredients-container .item.selected .image{
+  box-shadow: 0px 0px 10px #004445;
+}
+
+.ingredients-list .category .ingredients-container .item.selected .description,
+.ingredients-list .category .ingredients-container .item.selected .weight{
+  font-weight: bold;
+}
+
+.ingredients-list .category .ingredients-container .item .image {
+  width: 140px;
+  height: 140px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: 0 auto;
+  border-radius: 25px;
+}
+
+.ingredients-list .category .ingredients-container .item .description {
+  font-size: 16px;
+  margin: 3px 0 0;
+}
+
+.ingredients-list .category .ingredients-container .item .weight {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.ingredients-list .category .ingredients-container .item .quantity-selector {
+  display: flex;
+  justify-content: space-around
+}
+
+.ingredients-list .category .ingredients-container .item .quantity-selector button {
+  outline: 0;
+}
+
+.ingredients-list .category .ingredients-container .item .quantity-selector button i{
+  font-size: 14px;
+  color: #004445;
+  font-weight: bold;
+}
+
+.bottom-bar {
+  background-color: #004445;
+  color: #fff;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 -1px 7px 2px #1d21248c;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.bottom-bar .price {
+  color: #fff;
+  background: #004445;
+  position: absolute;
+  top: -34px;
+  right: 0;
+  padding: 5px 30px;
+  box-shadow: 0 -1px 7px 2px #1d21248c;
+  font-size: 16px;
+  font-weight: bold;
+  border-top-left-radius: 10px;
+}
+.bottom-bar .macros {
+  flex: 1;
+  text-align: center;
+}
+
+.bottom-bar .macros span {
+  margin: 0 10px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.bottom-bar .macros span .macros-value {
+  margin: 0;
+  font-weight: normal;
+}
+
+.bottom-bar .action {
+  cursor: pointer;
+  outline: 0;
+  background-color: #ffd800;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: none;
+  color: #004445;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 2px 20px;
+  width: 140px;
+  margin: 10px auto 0;
+}
+
+.bottom-bar .action:disabled {
+  background: #aaa;
+  opacity: 0.8;
+  cursor: default;
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .size-selection {
+  	flex-direction: row;
+  }
+
+  .size-selection button {
+  	margin: 0 15px;
+  }
+
+  .bottom-bar {
+    flex-direction: row;
+    padding: 15px 20px;
+    left: auto;
+    border-top-left-radius: 10px;
+    width: 650px;
+    justify-content: space-between;
+  }
+
+  .bottom-bar .macros {
+    text-align: left;
+  }
+
+  .bottom-bar .action {
+    margin: 0;
+  }
+}
