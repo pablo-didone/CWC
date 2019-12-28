@@ -1,4 +1,5 @@
 // Variables
+let config;
 let selectedQuantityOption;
 let selectedIngredientsQuantity = 0;
 let selectedProteinQuantity = 0;
@@ -16,8 +17,18 @@ let macros = {
 const driveImagesUrl = 'https://drive.google.com/uc?export=view&id=';
 const minSelectedIngredients = 3;
 const maxSelectedIngredients = 5;
-const mealBoxId = 4371494174813;
 const productsUrl = 'https://cookinwithcorey.com/admin/api/2019-10/products.json';
+
+// Main
+(async function() {
+  config = await (await fetch('config.json')).json();
+  console.log(config);
+  
+  // createPriceBar();
+  // await loadIngredients();
+  // await initMealBox();
+  // renderQuantityButtons(config.ingredients_configuration[0].ingredients_quantity);
+})();
 
 // Functions
 function renderQuantityButtons(ingredients_quantity) {
@@ -404,13 +415,6 @@ async function getVariants() {
 //   variants = (await (await fetch(productsUrl))
 //   	.json())
 //     .products
-//     .find(p => p.id === mealBoxId)
+//     .find(p => p.id === config.productId)
 //     .variants;
 }
-
-(async function() {
-  createPriceBar();
-  await loadIngredients();
-  await initMealBox();
-  renderQuantityButtons(config.ingredients_configuration[0].ingredients_quantity);
-})();

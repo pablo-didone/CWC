@@ -1,0 +1,16 @@
+{
+  "ingredients_configuration": [
+    {
+      "ingredients_quantity": 3,
+      "max_protein": 1
+    },
+    {
+      "ingredients_quantity": 5,
+      "max_protein": 2
+    }
+  ],
+  "productId": 4371494174813,
+  "variantCount": 99,
+  "variantPriceStart": 5.1,
+  "variantPriceStep": 0.1
+}
