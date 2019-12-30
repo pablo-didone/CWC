@@ -17,7 +17,6 @@ let macros = {
 const driveImagesUrl = 'https://drive.google.com/uc?export=view&id=';
 const minSelectedIngredients = 3;
 const maxSelectedIngredients = 5;
-const productsUrl = 'https://cookinwithcorey.com/admin/api/2019-10/products.json';
 
 // Main
 (async function() {
@@ -219,7 +218,7 @@ function calculate() {
 }
 
 function initMealBox() {
-  getVariants();
+  loadVariants();
   setMacros();
   $('.bottom-bar .price')[0].innerHTML = '$ ' + totalPrice;
 }
@@ -282,137 +281,7 @@ async function addToCart() {
   window.location.href = window.location.origin + '/cart';
 }
 
-async function getVariants() {
-
-  	variants = [
-      {
-        id: 31633731158109,
-        price: "1.00"
-      },
-    {
-  id: 31633731158109,
-  price: "1.00"
-},
-{
-  id: 31633731158109,
-  price: "2.00"
-},
-{
-  id: 31633731158109,
-  price: "3.00"
-},
-{
-  id: 31633731158109,
-  price: "4.00"
-},
-{
-  id: 31633731158109,
-  price: "5.00"
-},
-{
-  id: 31633731158109,
-  price: "6.00"
-},
-{
-  id: 31633731158109,
-  price: "7.00"
-},
-{
-  id: 31633731158109,
-  price: "8.00"
-},
-{
-  id: 31633731158109,
-  price: "9.00"
-},
-{
-  id: 31633731158109,
-  price: "10.00"
-},
-{
-  id: 31633731158109,
-  price: "11.00"
-},
-{
-  id: 31633731158109,
-  price: "12.00"
-},
-{
-  id: 31633731158109,
-  price: "13.00"
-},
-{
-  id: 31633731158109,
-  price: "14.00"
-},
-{
-  id: 31633731158109,
-  price: "15.00"
-},
-{
-  id: 31633731158109,
-  price: "16.00"
-},
-{
-  id: 31633731158109,
-  price: "17.00"
-},
-{
-  id: 31633731158109,
-  price: "18.00"
-},
-{
-  id: 31633731158109,
-  price: "19.00"
-},
-{
-  id: 31633731158109,
-  price: "20.00"
-},
-{
-  id: 31633731158109,
-  price: "21.00"
-},
-{
-  id: 31633731158109,
-  price: "22.00"
-},
-{
-  id: 31633731158109,
-  price: "23.00"
-},
-{
-  id: 31633731158109,
-  price: "24.00"
-},
-{
-  id: 31633731158109,
-  price: "25.00"
-},
-{
-  id: 31633731158109,
-  price: "26.00"
-},
-{
-  id: 31633731158109,
-  price: "27.00"
-},
-{
-  id: 31633731158109,
-  price: "28.00"
-},
-{
-  id: 31633731158109,
-  price: "29.00"
-},
-{
-  id: 31633731158109,
-  price: "30.00"
-},
-  ]
-//   variants = (await (await fetch(productsUrl))
-//   	.json())
-//     .products
-//     .find(p => p.id === config.productId)
-//     .variants;
+async function loadVariants() {
+  variants = (await (await fetch(`/products/${config.productHandle}.js`)).json()).variants
+    .map(({id, price}) => ({id, price: price / 100}));
 }
