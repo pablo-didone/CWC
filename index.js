@@ -22,12 +22,11 @@ const productsUrl = 'https://cookinwithcorey.com/admin/api/2019-10/products.json
 // Main
 (async function() {
   config = await (await fetch('config.json')).json();
-  console.log(config);
   
-  // createPriceBar();
-  // await loadIngredients();
-  // await initMealBox();
-  // renderQuantityButtons(config.ingredients_configuration[0].ingredients_quantity);
+  createPriceBar();
+  await loadIngredients();
+  await initMealBox();
+  renderQuantityButtons(config.ingredients_configuration[0].ingredients_quantity);
 })();
 
 // Functions
