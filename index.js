@@ -247,9 +247,8 @@ function normalizeIngredients(ingredients) {
 }
 
 function createPriceBar() {
-  window.location.pathname === '/pages/customize' &&
-  $(`
-	<div class="bottom-bar">
+  window.location.pathname === '/pages/customize' && $(`
+    <div class="bottom-bar">
       <div class="price"></div>
       <div class="macros"></div>
       <button class="action" onclick="void()" disabled>add dishes</button>
