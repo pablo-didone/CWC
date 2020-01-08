@@ -9,9 +9,9 @@
       "max_protein": 2
     }
   ],
-  "productId": 4371494174813,
-  "productHandle": "create-plate",
-  "variantCount": 99,
-  "variantPriceStart": 5.1,
-  "variantPriceStep": 0.1
+  "productId": 4447814615139,
+  "productHandle": "custom-plate",
+  "variantCount": 50,
+  "variantPriceStart": 0.1,
+  "variantPriceStep": 0.05
 }
