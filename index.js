@@ -116,7 +116,7 @@ function resetIngredients() {
 }
 
 function getIngredientImageUrl(url) {
-  const matches = url.match(/^https:\/\/drive.google.com\/open\?id\=([\w-]+)/);
+  const matches = url.match(/^https:\/\/drive.google.com\/open\?id=([\w-]+)/);
   const src = matches && matches[1] ?
     `${driveImagesUrl}${matches[1]}` :
   	url;
