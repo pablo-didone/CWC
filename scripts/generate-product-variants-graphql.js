@@ -13,7 +13,7 @@ let vars = {};
 
 // Main
 (async function() {
-  for (let i = 1; i <= config.variantCount; i++) {
+  for (let i = 0; i < config.variantCount; i++) {
     const eol = i < config.variantCount ? '\n' : '';
     const price = (config.variantPriceStart + config.variantPriceStep * i).toFixed(2);
     args += `    $productVariantInput${i}: ProductVariantInput!,${eol}`;
@@ -22,6 +22,9 @@ let vars = {};
       productId: `gid://shopify/Product/${config.productId}`,
       options: [`Custom $${price} plate`],
       price,
+      requiresShipping: true,
+      taxable: true,
+      inventoryPolicy: 'CONTINUE',
     }
   }
 
